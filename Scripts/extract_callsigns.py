@@ -22,6 +22,9 @@ from bs4 import BeautifulSoup
 
 
 def callsigns_list(url = "https://cqww.com/publiclogs/2024cw/", class_ = 'w3-cell w3-mobile'):
+    '''
+    returns a list of all callsigns AS MENTIONED ON THE CQWWCW 2024 CONTEST PUBLIC LOGS PAGE
+    '''
     html = requests.get(url).text
     soup = BeautifulSoup(html, 'html.parser')
     soup_callsigns = soup.find_all('div', class_=class_)
